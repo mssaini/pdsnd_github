@@ -24,7 +24,7 @@ def get_filters():
             break
         else:
             print('Please enter a valid city.')
-            continue    
+            continue
 
     # get user input for month (all, january, february, ... , june)
     while True:
@@ -34,7 +34,7 @@ def get_filters():
             break
         else:
             print('Please enter a valid month.')
-            continue   
+            continue
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
@@ -44,7 +44,7 @@ def get_filters():
             break
         else:
             print('Please enter a valid city.')
-            continue  
+            continue
 
     print('-'*40)
     return city, month, day
@@ -96,16 +96,16 @@ def time_stats(df):
 
     # display the most common month
     months = ['January', 'February', 'March', 'April', 'May', 'June']
-    most_common_month = df['month'].value_counts().idxmax()
-    print('The most common month is ', months[most_common_month - 1])
+    most_c_month = df['month'].value_counts().idxmax()
+    print('The most common month is ', months[most_c_month - 1])
 
     # display the most common day of week
-    most_common_dayofweek = df['day_of_week'].value_counts().idxmax()
-    print('\nThe most common day of week is ', most_common_dayofweek)
+    most_c_dayofweek = df['day_of_week'].value_counts().idxmax()
+    print('\nThe most common day of week is ', most_c_dayofweek)
 
     # display the most common start hour
-    most_common_start_hour = df['Start Time'].dt.hour.value_counts().idxmax()
-    print('\nThe most common hour for Start Time is ', most_common_start_hour)
+    most_c_start_hour = df['Start Time'].dt.hour.value_counts().idxmax()
+    print('\nThe most common hour for Start Time is ', most_c_start_hour)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
