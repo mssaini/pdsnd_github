@@ -7,6 +7,13 @@ Explore US bikeshare data
 ### Description
 This Python script analyzes bikeshare data for Chicago, New York and Washington.
 
+You can view the following types of data:
+- Time stats
+- Station stats
+- Trip duration stats
+- User stats
+- View raw data
+
 ### Files used
 bikeshare_2.py
 chicago.csv
