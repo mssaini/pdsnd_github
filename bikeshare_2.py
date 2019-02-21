@@ -24,7 +24,7 @@ def get_filters():
             break
         else:
             print('Please enter a valid city.')
-            continue    
+            continue
 
     # get user input for month (all, january, february, ... , june)
     while True:
@@ -34,7 +34,7 @@ def get_filters():
             break
         else:
             print('Please enter a valid month.')
-            continue   
+            continue
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
@@ -44,7 +44,7 @@ def get_filters():
             break
         else:
             print('Please enter a valid city.')
-            continue  
+            continue
 
     print('-'*40)
     return city, month, day
@@ -211,10 +211,19 @@ def main():
         city, month, day = get_filters()
         df = load_data(city, month, day)
 
+        # Get time statistics for specified city
         time_stats(df)
+
+        # Get station statistics for specfied city
         station_stats(df)
+
+        # Get trip duration statistics for specfied city
         trip_duration_stats(df)
+
+        # Get user statistics for specfied city
         user_stats(df)
+
+        # Display data 
         display_data(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
