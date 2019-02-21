@@ -96,16 +96,16 @@ def time_stats(df):
 
     # display the most common month
     months = ['January', 'February', 'March', 'April', 'May', 'June']
-    most_common_month = df['month'].value_counts().idxmax()
-    print('The most common month is ', months[most_common_month - 1])
+    most_c_month = df['month'].value_counts().idxmax()
+    print('The most common month is ', months[most_c_month - 1])
 
     # display the most common day of week
-    most_common_dayofweek = df['day_of_week'].value_counts().idxmax()
-    print('\nThe most common day of week is ', most_common_dayofweek)
+    most_c_dayofweek = df['day_of_week'].value_counts().idxmax()
+    print('\nThe most common day of week is ', most_c_dayofweek)
 
     # display the most common start hour
-    most_common_start_hour = df['Start Time'].dt.hour.value_counts().idxmax()
-    print('\nThe most common hour for Start Time is ', most_common_start_hour)
+    most_c_start_hour = df['Start Time'].dt.hour.value_counts().idxmax()
+    print('\nThe most common hour for Start Time is ', most_c_start_hour)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -118,17 +118,17 @@ def station_stats(df):
     start_time = time.time()
 
     # display most commonly used start station
-    most_common_start_station = df['Start Station'].value_counts().idxmax()
-    print('The most commonly used start station is ', most_common_start_station)
+    mc_start_station = df['Start Station'].value_counts().idxmax()
+    print('The most commonly used start station is ', mc_start_station)
 
     # display most commonly used end station
-    most_common_end_station = df['End Station'].value_counts().idxmax()
-    print('\nThe most commonly used end station is ', most_common_end_station)
+    mc_end_station = df['End Station'].value_counts().idxmax()
+    print('\nThe most commonly used end station is ', mc_end_station)
 
     # display most frequent combination of start station and end station trip
-    most_frequent_combination = df[['Start Station', 'End Station']].groupby(['Start Station', 'End Station']).size().nlargest(1)
+    mf_combination = df[['Start Station', 'End Station']].groupby(['Start Station', 'End Station']).size().nlargest(1)
     print('\nThe most frequest combination is ')
-    print(most_frequent_combination)
+    print(mf_combination)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
